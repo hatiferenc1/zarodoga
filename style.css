@@ -1,0 +1,104 @@
+*
+{
+  margin           : 1            ;
+  font-family      : arial        ;
+}
+
+div#menu
+{
+  
+  background-color : #000000           ;
+  padding          : 8px 0 8px 96px ;
+  color            : #ffffff           ;
+  font-weight      : bold           ;
+}
+
+div#menu a
+{
+  color            : #fff       ;
+  text-decoration  : none         ;
+  display          : inline-block ;
+  width            : 120px        ;
+  text-align       : center       ;
+}
+
+div#menu a:hover
+{
+  color            : #FF0      ;
+}
+
+
+
+div#login
+{
+  background-color : #919191       ;
+  margin-top       :-8px          ;
+  padding          : 8px          ;
+  float            : right        ;
+  width            : 200px        ;
+  text-align       : center       ;
+}
+
+div#tartalom
+{
+  margin           : 12px 36px    ;
+}
+
+div#tartalom a
+{
+    color            : white        ;
+    text-align       : center       ;
+}
+
+div#tartalom a:hover
+{
+  color            : #FF0       ;
+}
+
+div.doboz
+{
+    border: solid 1px #888          ;
+    border-radius: 6px              ;
+    background-color:rgb(0, 0, 0) ;
+    box-shadow: 2px 2px 2px #AAA;
+    padding: 12px 24px;
+    line-height: 30px;
+}
+
+div.doboz h2
+{
+    margin: 8px 0px;
+    color: white;
+    font-style: italic;
+}
+
+div.doboz h3
+{
+    margin: 8px 0px;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+}
+
+div.doboz ul 
+{
+  color: white;
+}
+
+
+
+.gomb {
+  background-color: #fffffffd;
+  border: none;
+  color: rgb(2, 2, 2);
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.gomb:hover {
+  background-color: #FF0;
+}
+
+
