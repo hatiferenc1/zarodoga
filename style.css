@@ -4,6 +4,16 @@
   font-family      : arial        ;
 }
 
+body{
+  background-image: url("./image/hatter2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  
+}
+
+
+
 div#menu
 {
   
@@ -39,21 +49,9 @@ div#login
   text-align       : center       ;
 }
 
-div#tartalom
-{
-  margin           : 12px 36px    ;
-}
 
-div#tartalom a
-{
-    color            : white        ;
-    text-align       : center       ;
-}
 
-div#tartalom a:hover
-{
-  color            : #FF0       ;
-}
+
 
 div.doboz
 {

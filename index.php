@@ -30,12 +30,10 @@
     if($p=="rolunk"         )   print "Információk"                 ; else
     if($p=="termekek"       )   print "Hirdetések"                  ; else
     if($p=="kapcs"          )   print "Elérhetőségeink"             ; else
-    if($p=="vend"           )   print "Vendégkönyv"                 ; else
     if($p=="login"          )   print "Belépés"                     ; else
     if($p=="reg"            )   print "Regisztráció"                ; else
     if($p=="profil"         )   print "Profil"                      ; else
     
-    if($p=="new"           )   print "Legújabb Hirdetések"          ; else
     
                                 print "Legendary Loot"   ;
     ?>
@@ -43,59 +41,48 @@
 </head>
 <body>
 <?php
-    if(!$belepve) print "
-        <div id='menu'>
-            <div id='login'><a href='./?p=login'        > Belépés </a></div>
-            [
-            <a href='./'                >   Kezdőoldal      </a> |
-            <a href='./?p=rolunk'       >   Rólunk          </a> |
-            
-            ]
-            
+    if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
+    if(!$belepve){
 
-        </div>  
-        " ;
+        if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
+        if($p==""               )   include("login_form.php")                           ; else
+        if($p=="reg"            )   include("reg_form.php")                             ; else
+                                    print "<h1>404 a kért oldal nem található</h1>"     ;
+ 
+    }
+    else{
+
     
-    else print "
+    print "
         <div id='menu'>
             <div id='login'><a href='./?p=profil'>   $_SESSION[unev]         </a> </div>
             [
                 <a href='./'                >   Kezdőoldal            </a> |
                 <a href='./?p=rolunk'       >   Rólunk                </a> |
-                <a href='./?p=termekek'     >   Hírdetések            </a> |
-                <a href='./?p=vend'         >   Vendégkönyv           </a> 
+                <a href='./?p=termekek'     >   Hírdetések            </a> 
+                
                 
                 
             ]
         </div> 
         " ; 
-   
+        if($p==""               )   print "<h1>Kezdőoldal</h1>"                         ; else
+        if($p=="rolunk"         )   print "<h1>Rólunk</h1>"                             ; else
+        if($p=="termekek"       )   include("hirdetesek.php")                           ; else
+        if($p=="login"          )   include("login_form.php")                           ; else
+        if($p=="reg"            )   include("reg_form.php")                             ; else
+        if($p=="profil"         )   include("profil.php")                               ; else
+        if($p=="adatmod"        )   include("adatmod_form.php")                         ; else
+        if($p=="jelszomod"      )   include("jelszomod_form.php")                       ; else
+        if($p=="termekek"      )    include("hirdetesek_form.php")                       ; else
+                                    print "<h1>404 a kért oldal nem található</h1>"     ;
+
+    } 
     
    
 ?> 
-<div id=tartalom>
-<?php
 
-    // print_r( $_GET )    ;
-    if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
 
-    if($p==""               )   print "<h1>Kezdőoldal</h1>"                         ; else
-    if($p=="rolunk"         )   print "<h1>Rólunk</h1>"                             ; else
-    if($p=="vend"           )   include("vendegkonyv_form.php")                     ; else
-    if($p=="termekek"       )   include("hirdetesek.php")                             ; else
-    if($p=="login"          )   include("login_form.php")                           ; else
-    if($p=="reg"            )   include("reg_form.php")                             ; else
-    if($p=="profil"         )   include("profil.php")                               ; else
-    if($p=="adatmod"        )   include("adatmod_form.php")                         ; else
-    if($p=="jelszomod"      )   include("jelszomod_form.php")                       ; else
-    
-   
-    
-
-    
-                                print "<h1>404 - A kért oldal nem található</h1>"   ;   
-
-?>
 
 <?php
 
@@ -129,7 +116,7 @@
 
         mysqli_close($adb);
 ?>
-</div> 
+
 <iframe name='kisablak' x_width=0 y_height=0 z_frameborder=0></iframe>
 </body>
 </html>
