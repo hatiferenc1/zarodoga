@@ -9,8 +9,8 @@
     <input type='password'  name='pw2'      placeholder='Jelszó megerősítése'><br><br>
     <input type='submit'    value="Regisztráció">
 
-    <hr><br>
+    <hr width=1250 style='margin:8px -20px;'><br>
 
-    <a href='./?p=login'>Vissza a belépési felületre</a>
+    <a id='vfelulet'href='./?p=login'>Vissza a belépési felületre</a>
 
 </form>

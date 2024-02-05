@@ -21,7 +21,7 @@
         <input type='text'      name='umail'    placeholder='E-mail cím'        value='<?=$user['umail'];?>'>   <br>
         <input type='password'  name='upw'      placeholder='Jelszó az ellenőrzéshez'>                          <br>
         <input type='hidden'    name='ustrid'   value='<?=$user['ustrid'];?>'>                                  <br>
-        <hr width=200 style='margin:16px 0px;'>
+        <hr width=1250 style='margin:16px 0px;'>
         <input type='submit' value='Adatmódosítás'>
     </form>
 </div>

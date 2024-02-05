@@ -7,8 +7,17 @@
 body{
   background-image: url("./image/hatter2.jpg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size:cover;
+  
+}
+
+h1{
+  text-shadow: 3px 3px 3px #000000;
+  color: #fff;
+  
+  /*border:solid 5px #000000;
+  background-color: #000000;
+  display: inline-block;*/
   
 }
 
@@ -52,7 +61,7 @@ div#login
 
 
 
-
+/*adatmod hattergenyo*/
 div.doboz
 {
     border: solid 1px #888          ;
@@ -81,12 +90,16 @@ div.doboz ul
 {
   color: white;
 }
+div.doboz li {
+  margin: 5px;
+  margin-top: 10px;
+}
 
-
-
-.gomb {
+/*kilepogomb*/
+.kilepes {
   background-color: #fffffffd;
   border: none;
+  border-radius: 5px;
   color: rgb(2, 2, 2);
   padding: 5px 32px;
   text-align: center;
@@ -95,8 +108,55 @@ div.doboz ul
   font-size: 16px;
 }
 
-.gomb:hover {
+.kilepes:hover {
   background-color: #FF0;
 }
+/*adatmod gombok*/
+a#gomb {
+  padding: 7px;
+  color: black;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
 
+}
+a#gomb:hover{
+  background-color: #FF0;
+}
+a#vfelulet{
+  padding: 7px;
+  color: black;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+
+
+}
+a#vfelulet:hover{
+  background-color: #FF0;
+}
+/*galéria kinézet*/
+div.gallery{
+  margin: 5px;
+  float: left;
+  width: 180px;
+
+}
+div.gallery:hover{
+  border: 1px solid #777;
+}
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+  background-color: #000000;
+}
+/*A ROMÁN KURVAANYJÁT*/
+
+/* a pont a class a # az id*/
 

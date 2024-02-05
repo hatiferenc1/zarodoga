@@ -21,7 +21,7 @@
         <input type='password'  name='pw1'      placeholder='Új jelszavad'>             <br>
         <input type='password'  name='pw2'      placeholder='Jelszó megerősítése'>      <br>
         <input type='hidden'    name='ustrid'   value='<?=$user['ustrid'];?>'>          <br>
-        <hr width=200 style='margin:16px 0px;'>
+        <hr width=1250 style='margin:16px 0px;'>
         <input type='submit' value='Jelszómódosítás'>
     </form>
 </div>
