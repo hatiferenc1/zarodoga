@@ -28,7 +28,7 @@
 
     print "<script> 
                 alert('Köszönjük regisztrációdat')
-                parent.location.href='./?p=login'
+                parent.location.href='./'
             </script>
     ";
 ?>

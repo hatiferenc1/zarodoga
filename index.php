@@ -69,8 +69,8 @@
         " ; 
         if($p==""               )   print "<h1>Lega Loot kezdőoldal</h1>"               ; else
         if($p=="rolunk"         )   print "<h1>Rólunk</h1>"                             ; else
-        //*if($p=="legujabb"       )   print "Legújabb"                                  ; else
-        if($p=="termekek"       )   include("hirdetes.php")                        ; else                          
+        //*if($p=="legujabb"    )   print "Legújabb"                                    ; else
+        if($p=="termekek"       )   include("hirdetes.php")                             ; else                          
         if($p=="login"          )   include("login_form.php")                           ; else
         if($p=="reg"            )   include("reg_form.php")                             ; else
         if($p=="profil"         )   include("profil.php")                               ; else
@@ -79,15 +79,7 @@
         if($p=="termekek"       )   include("hirdetesek_form.php")                      ; else
                                     print "<h1>404 a kért oldal nem található</h1>"     ;
 
-    } 
-    
-   
+    }  
 ?> 
-
-
-
-
-
-
 </body>
 </html>
