@@ -2,15 +2,15 @@
     session_start();
     date_default_timezone_set("Europe/Budapest");
 
-    if(isset($_SESSION['uid'])) $belepve=1  ;
+    if(isset($_SESSION['Uid'])) $belepve=1  ;
     else                        $belepve=0  ;
 
     include("adbkapcsolat.php");
     
     
-    if($belepve) $lid=$_SESSION['lid']; else $lid=-1;
-    mysqli_query($adb, "INSERT INTO naplo   (nid, nurl,                     ndatum, nip,                        nlid)
-                        VALUES              ('', '$_SERVER[REQUEST_URI]',   NOW(),  '$_SERVER[REMOTE_ADDR]',    '$lid')
+    if($belepve) $Lid=$_SESSION['Lid']; else $Lid=-1;
+    mysqli_query($adb, "INSERT INTO naplo   (Nid, Nurl,                     Ndatum, Nip,                        NLid)
+                        VALUES              ('', '$_SERVER[REQUEST_URI]',   NOW(),  '$_SERVER[REMOTE_ADDR]',    '$Lid')
                         ");
 
 ?>
@@ -45,8 +45,8 @@
     if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
     if(!$belepve){
 
-        if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
-        if($p==""               )   include("login_form.php")                           ; else
+        if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="login" ;
+        if($p=="login"          )   include("login_form.php")                           ; else
         if($p=="reg"            )   include("reg_form.php")                             ; else
                                     print "<h1>404 a kért oldal nem található</h1>"     ;
  
@@ -56,7 +56,7 @@
     
     print "
         <div id='menu'>
-            <div id='login'><a href='./?p=profil'>   $_SESSION[unev]         </a> </div>
+            <div id='login'><a href='./?p=profil'>   $_SESSION[Uname]         </a> </div>
             [
                 <a href='./'                >   Kezdőoldal  </a> |
                 <a href='./?p=rolunk'       >   Rólunk                </a> |

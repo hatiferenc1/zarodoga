@@ -7,12 +7,12 @@
 
     if($_POST['user']=="")  die("<script> alert('Nem adtad meg az azonosítódat')</script>");
 
-    $upw = md5($_POST['pw']);
+    $Upw = md5($_POST['pw']);
     
     $t = mysqli_query($adb, "
             SELECT  * FROM user
-            WHERE   (unev='$_POST[user]' OR umail='$_POST[user]') 
-            AND     upw = '$upw'
+            WHERE   (Uname='$_POST[user]' OR Umail='$_POST[user]') 
+            AND     Upw = '$Upw'
             AND     ustatusz = 'A'
     ");
 
@@ -20,17 +20,17 @@
     {
         $sor = mysqli_fetch_array($t);
 
-        $_SESSION['uid']    =   $sor['uid'];
-        $_SESSION['unev']   =   $sor['unev'];
-        $_SESSION['umail']  =   $sor['umail'];
-        $_SESSION['upw']    =   $sor['upw'];
-        $_SESSION['ujog']   =   $sor['ujog'];
-
+        $_SESSION['Uid']    =   $sor['Uid'];
+        $_SESSION['Uname']   =   $sor['Uname'];
+        $_SESSION['Umail']  =   $sor['Umail'];
+        $_SESSION['Upw']    =   $sor['Upw'];
+        $_SESSION['Urole']   =   $sor['Urole'];
+/*Majd Lid helyett egyedi azonosito*/ 
         mysqli_query($adb, "
-            INSERT INTO login    (lid ,     luid,            ldatum,    lip) 
-            VALUES              ('',      '$sor[uid]',  NOW(),     '$_SERVER[REMOTE_ADDR]');
+            INSERT INTO login    (Lid ,     Luid,            Ldatum,    Lip) 
+            VALUES              ('',      '$sor[Uid]',  NOW(),     '$_SERVER[REMOTE_ADDR]');
         ");
-        $_SESSION['lid']    =   mysqli_insert_id($adb);
+        $_SESSION['Lid']    =   mysqli_insert_id($adb);
 
         print "
             <script>

@@ -8,7 +8,7 @@
 ?>
 <h1>Profil</h1>
 <div class='doboz'>
-    <h2><?=$_SESSION['unev'];?></h2>
+    <h2><?=$_SESSION['Uname'];?></h2>
 
     <ul>
         <li> <a id='gomb' href='./?p=adatmod'> Adatok módosítása</a>

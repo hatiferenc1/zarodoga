@@ -5,12 +5,12 @@
     
     //session_destroy();
 
-    unset($_SESSION['uid']);
-    unset($_SESSION['unev']);
-    unset($_SESSION['umail']);
-    unset($_SESSION['upw']);
-    unset($_SESSION['ujog']);
-    unset($_SESSION['lid']);
+    unset($_SESSION['Uid']);
+    unset($_SESSION['Uname']);
+    unset($_SESSION['Umail']);
+    unset($_SESSION['Upw']);
+    unset($_SESSION['Urole']);
+    unset($_SESSION['Lid']);
 
     print "
         <script>
