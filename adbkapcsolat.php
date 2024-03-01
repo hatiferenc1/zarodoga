@@ -3,7 +3,7 @@
     $server = "localhost";
         $user = "root";
         $dbpw = "";
-        $db = "reg";
+        $db = "legaloot";
 
     $adb = mysqli_connect($server, $user, $dbpw, $db);
 

@@ -16,7 +16,7 @@
 <div class='doboz'>
     <h2><?=$_SESSION['Uname'];?></h2>
 
-    <form action='jelszomod_ir.php' method='post' target='kisablak'>
+    <form action='jelszomod_ir.php' method='post' >
         <input type='password'  name='Upw'      placeholder='Jelenlegi jelszavad'>      <br>
         <input type='password'  name='pw1'      placeholder='Új jelszavad'>             <br>
         <input type='password'  name='pw2'      placeholder='Jelszó megerősítése'>      <br>

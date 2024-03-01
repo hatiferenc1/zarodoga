@@ -13,9 +13,9 @@
             SELECT  * FROM user
             WHERE   (Uname='$_POST[user]' OR Umail='$_POST[user]') 
             AND     Upw = '$Upw'
-            AND     ustatusz = 'A'
+            AND     ustatus = 'A'
     ");
-
+    
     if(mysqli_num_rows($t))
     {
         $sor = mysqli_fetch_array($t);
@@ -25,7 +25,7 @@
         $_SESSION['Umail']  =   $sor['Umail'];
         $_SESSION['Upw']    =   $sor['Upw'];
         $_SESSION['Urole']   =   $sor['Urole'];
-/*Majd Lid helyett egyedi azonosito*/ 
+
         mysqli_query($adb, "
             INSERT INTO login    (Lid ,     Luid,            Ldatum,    Lip) 
             VALUES              ('',      '$sor[Uid]',  NOW(),     '$_SERVER[REMOTE_ADDR]');
@@ -37,7 +37,7 @@
                 parent.location.href='./'
             </script>
         ";
-
+        
         
     }
     else 

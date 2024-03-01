@@ -16,7 +16,7 @@
 <div class='doboz'>
     <h2><?=$_SESSION['Uname'];?></h2>
 
-    <form action='adatmod_ir.php' method='post' target='kisablak'>
+    <form action='adatmod_ir.php' method='post' >
         <input type='text'      name='Uname'     placeholder='Felhasználónév'    value='<?=$user['Uname'];?>'>    <br>
         <input type='text'      name='Umail'    placeholder='E-mail cím'        value='<?=$user['Umail'];?>'>   <br>
         <input type='password'  name='Upw'      placeholder='Jelszó az ellenőrzéshez'>                          <br>
