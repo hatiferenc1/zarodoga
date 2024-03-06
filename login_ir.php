@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    print_r($_POST);
+    
 
     include("adbkapcsolat.php");
 
@@ -27,7 +27,7 @@
         $_SESSION['Urole']   =   $sor['Urole'];
 
         mysqli_query($adb, "
-            INSERT INTO login    (Lid ,     Luid,            Ldatum,    Lip) 
+            INSERT INTO login    (Lid ,     Luid,            Ldate,    Lip) 
             VALUES              ('',      '$sor[Uid]',  NOW(),     '$_SERVER[REMOTE_ADDR]');
         ");
         $_SESSION['Lid']    =   mysqli_insert_id($adb);
@@ -42,7 +42,9 @@
     }
     else 
     {
-        die("<script> alert('Hibás belépési adatok!')</script>");
+        die("<script> alert('Hibás belépési adatok!'); parent.location.href='./'</script>");
+
+    
     }
 
     mysqli_close($adb);

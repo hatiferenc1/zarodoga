@@ -9,7 +9,7 @@
     
     
     if($belepve) $Lid=$_SESSION['Lid']; else $Lid=-1;
-    mysqli_query($adb, "INSERT INTO naplo   (Nid, Nurl,                     Ndatum, Nip,                        NLid)
+    mysqli_query($adb, "INSERT INTO naplo   (Nid, Nurl,                     Ndate, Nip,                        NLid)
                         VALUES              ('', '$_SERVER[REQUEST_URI]',   NOW(),  '$_SERVER[REMOTE_ADDR]',    '$Lid')
                         ");
 
