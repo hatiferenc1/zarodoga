@@ -26,7 +26,7 @@
 
     if( isset($_GET['p'])) $p=$_GET['p'] ; else $p="" ;
 
-    if($p==""               )   print "Főoldal"                     ; else
+    if($p=="fooldal"               )   print "Főoldal"                     ; else
     if($p=="rolunk"         )   print "Információk"                 ; else
     //if($p=="legujabb"       )   print "Legújabb"                    ; else
     if($p=="termekek"       )   print "Hirdetések"                  ; else
@@ -58,7 +58,7 @@
         <div id='menu'>
             <div id='login'><a href='./?p=profil'>   $_SESSION[Uname]         </a> </div>
             [
-                <a href='./'                >   Kezdőoldal  </a> |
+                <a href='./?p=fooldal'                >   Kezdőoldal  </a> |
                 <a href='./?p=rolunk'       >   Rólunk                </a> |
                 <a href='./?p=termekek'     >   Hírdetések            </a> 
                 
@@ -67,10 +67,10 @@
             ]
         </div> 
         " ; 
-        if($p==""               )   print "<h1>Lega Loot kezdőoldal</h1>"               ; else
+        if($p=="fooldal"        )   include("hirdetes.php")                             ; else
         if($p=="rolunk"         )   print "<h1>Rólunk</h1>"                             ; else
         //*if($p=="legujabb"    )   print "Legújabb"                                    ; else
-        if($p=="termekek"       )   include("hirdetes.php")                             ; else                          
+        if($p=="termekek"       )   include("hirdetes_form.php")                             ; else                          
         if($p=="login"          )   include("login_form.php")                           ; else
         if($p=="reg"            )   include("reg_form.php")                             ; else
         if($p=="profil"         )   include("profil.php")                               ; else

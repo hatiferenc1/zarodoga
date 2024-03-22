@@ -34,7 +34,7 @@
 
         print "
             <script>
-                parent.location.href='./'
+                parent.location.href='./?p=fooldal'
             </script>
         ";
         
