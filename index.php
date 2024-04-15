@@ -67,7 +67,8 @@
             ]
         </div> 
         " ; 
-        if($p=="fooldal"        )   include("hirdetes.php")                             ; else
+        if($p=="fooldal"        )   include("hirdetesek.php")                           ; else
+        if($p=="hirdetes"        )   include("hirdetes.php")                            ; else
         if($p=="rolunk"         )   print "<h1>Rólunk</h1>"                             ; else
         //*if($p=="legujabb"    )   print "Legújabb"                                    ; else
         if($p=="termekek"       )   include("hirdetes_form.php")                             ; else                          

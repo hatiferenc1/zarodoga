@@ -1,41 +1,20 @@
 <?php
-    //kell if ide
-
-    $kekep = mysqli_query($adb , "
-            SELECT * 
-            FROM post
-            ORDER BY Ptime
-    ");
-
-    print "<div class='container'>";
-    while($posztsor = mysqli_fetch_assoc($kekep))
-    {
-        $postuser = mysqli_fetch_array(mysqli_query($adb , "
-                    SELECT * 
-                    FROM user
-                    WHERE Uid = '$posztsor[PUid]'
-        " ));
-        print "
-        <div class='hirdetesek'>
-            <figure>
-                <a>
-                    <img src='./kiskep/$posztsor[Ppicture]'>
-                </a>
-                <figcaption>
-                    <p>
-                        $posztsor[Ptitle]
-                    </p>
-                    <p>
-                        $postuser[Uname]
-                    </p>
-                </figcaption>   
-            <figure> 
-        </div>   
-        ";
-    }
-    print "<div style='clear:both;'>
-            </div>
-            </div>"
-
+    $poszt= mysqli_fetch_array(mysqli_query($adb , "
+                                                SELECT * FROM post 
+                                                WHERE Pid ='$_GET[c]'
+                                                "));
 
 ?>
+
+
+
+
+
+<div class='pdoboz'>
+    <h1><?=$poszt['Ptitle'];?></h1>
+    <img src="./images/<?=$_GET['k'];?>" style="width: 40%;">
+    <p>Leírás: <?=$poszt['Pdesc'];?></p>
+    <p>Elérhetőség: <?=$poszt['Ptel'];?></p>
+    <p>Város: <?=$poszt['Pcity'];?></p>
+    <p>Ár: <?=$poszt['Pcost'];?></p>
+</div>
