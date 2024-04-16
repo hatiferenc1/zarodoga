@@ -21,7 +21,7 @@
                 <a href='./?p=hirdetes&k=$posztsor[Ppicture]&c=$posztsor[Pid]&u=$posztsor[PUid]'>
                     <img src='./kiskep/$posztsor[Ppicture]'>
                 </a>
-                <figcaption>
+                <figcaption style='color:white;'>
                     <p>
                         $posztsor[Ptitle]
                     </p>
