@@ -5,26 +5,26 @@
 
     include("adbkapcsolat.php");
 
-    if($_POST['Uname']=="")  die("<script> alert('Nem adtad meg a felhasználónevedet!')</script>");
-    if($_POST['Umail']=="")  die("<script> alert('Nem adtad meg az e-mail címed!')</script>");
-    if($_POST['Ufirstname']=="")  die("<script> alert('Nem adtad meg a vezetékneved!')</script>");
-    if($_POST['Ulastname']=="")  die("<script> alert('Nem adtad meg a keresztneved!')</script>");
+    if($_POST['Uname']=="")  die("<script> alert('Nem adtad meg a felhasználónevedet!')</script><script>parent.location.href='./?p=reg'</script>");
+    if($_POST['Umail']=="")  die("<script> alert('Nem adtad meg az e-mail címed!')</script><script>parent.location.href='./?p=reg'</script>");
+    if($_POST['Ufirstname']=="")  die("<script> alert('Nem adtad meg a vezetékneved!')</script><script>parent.location.href='./?p=reg'</script>");
+    if($_POST['Ulastname']=="")  die("<script> alert('Nem adtad meg a keresztneved!')</script><script>parent.location.href='./?p=reg'</script>");
 
-    if(strlen($_POST['pw1'])<4)  die("<script> alert('Jelszavad túl rövid!')</script>");
-    if($_POST['pw1']!=$_POST['pw2'])  die("<script> alert('Jelszavaid nem egyeznek')</script>");
+    if(strlen($_POST['pw1'])<4)  die("<script> alert('Jelszavad túl rövid!')</script></script><script>parent.location.href='./?p=reg'</script>");
+    if($_POST['pw1']!=$_POST['pw2'])  die("<script> alert('Jelszavaid nem egyeznek')</script></script><script>parent.location.href='./?p=reg'</script>");
 
     if(mysqli_num_rows(mysqli_query($adb, "SELECT * FROM user WHERE Uname = '$_POST[Uname]'")))
-    die("<script> alert('Ez a felhasználó név már foglalt!')</script>");
+    die("<script> alert('Ez a felhasználó név már foglalt!')</script></script><script>parent.location.href='./?p=reg'</script>");
 
     if(mysqli_num_rows(mysqli_query($adb, "SELECT * FROM user WHERE Umail = '$_POST[Umail]'")))
-    die("<script> alert('Ezzel az e-mail címmel már regisztráltál!')</script>");
+    die("<script> alert('Ezzel az e-mail címmel már regisztráltál!')</script></script><script>parent.location.href='./?p=reg'</script>");
 
     if(mysqli_num_rows(mysqli_query($adb, "SELECT * FROM user WHERE Ufirstname = '$_POST[Ufirstname]'")))
     die();
-    //die("<script> alert('Nem adtad meg a vezetékneved!')</script>");
+    
     if(mysqli_num_rows(mysqli_query($adb, "SELECT * FROM user WHERE Ulastname = '$_POST[Ulastname]'")))
     die();
-    //die("<script> alert('Nem adtad meg a vezetékneved!')</script>");
+    
     
     $Upw    = md5($_POST['pw1']);
     $str10  = randomstring();

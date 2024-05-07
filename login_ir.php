@@ -5,7 +5,7 @@
 
     include("adbkapcsolat.php");
 
-    if($_POST['user']=="")  die("<script> alert('Nem adtad meg az azonosítódat')</script>");
+    if($_POST['user']=="")  die("<script> alert('Nem adtad meg az azonosítódat')</script><script>parent.location.href='./'</script>");
 
     $Upw = md5($_POST['pw']);
     
@@ -27,8 +27,8 @@
         $_SESSION['Urole']   =   $sor['Urole'];
 
         mysqli_query($adb, "
-            INSERT INTO login    (Lid ,     Luid,            Ldate,    Lip) 
-            VALUES              ('',      '$sor[Uid]',  NOW(),     '$_SERVER[REMOTE_ADDR]');
+            INSERT INTO login    (Lid,  Ldate,  Lip,                        Luid) 
+            VALUES              ('',    NOW(),  '$_SERVER[REMOTE_ADDR]',    '$sor[Uid]');
         ");
         $_SESSION['Lid']    =   mysqli_insert_id($adb);
 

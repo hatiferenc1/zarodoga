@@ -1,9 +1,9 @@
 <?php
 
     $server = "localhost";
-        $user = "root";
-        $dbpw = "Fecookaa0077";
-        $db = "legaloot";
+        $user = "koqtmdzs";
+        $dbpw = "8b:r2n+YTP3tA0";
+        $db = "koqtmdzs_legaloot";
 
     $adb = mysqli_connect($server, $user, $dbpw, $db);
 

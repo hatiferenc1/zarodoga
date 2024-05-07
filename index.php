@@ -7,11 +7,10 @@
 
     include("adbkapcsolat.php");
     
-    
-    if($belepve) $Lid=$_SESSION['Lid']; else $Lid=-1;
-    mysqli_query($adb, "INSERT INTO naplo   (Nid, Nurl,                     Ndate, Nip,                        NLid)
-                        VALUES              ('', '$_SERVER[REQUEST_URI]',   NOW(),  '$_SERVER[REMOTE_ADDR]',    '$Lid')
-                        ");
+    /*if($belepve) $lid=$_SESSION['Lid']; else $lid=-1;
+    mysqli_query($adb, "INSERT INTO naplo (Nid,   Nurl,                       Ndate,  Nip,                        NLid)
+                        VALUES              ('',    '$_SERVER[REQUEST_URI]',    NOW(),  '$_SERVER[REMOTE_ADDR]',    '$lid')
+                        ");*/
 
 ?>
 
